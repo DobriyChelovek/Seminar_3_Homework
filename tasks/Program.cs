@@ -4,51 +4,44 @@
 14212 -> нет
 12821 -> да
 23432 -> да
+
+
 */
 
-void Print(string message)
+string? GetNUmber()
 {
-    Console.WriteLine(message);
-}
-
-int GetNUmber(string message)
-{
-    Console.WriteLine(message);
+    Console.WriteLine("Введите пятизначное число");
     string? a = Console.ReadLine();
-    int b = Convert.ToInt32(a);
-    return b;
+    return a;
 }
-int number = GetNUmber( "Введите положительное пятизначное число");
-Print($"Number :{number}");
-
-
-int number1;
-int reverse = 0;
-
-int Revnum()
+string? b = GetNUmber();
+int c = Convert.ToInt32(b);
+bool CheckFor5()
 {
-    while (number >0)
+    if (c < 99999 && c > 10000)
+    {
+        return true;
+    }
+    System.Console.WriteLine("Это не пятизначное число");
+    return false;
+}
+if (CheckFor5())
 {
-    number1 = number%10;
-    reverse = (reverse*10 +number1);
-    number = number /10;
+    bool CheckNum()
+    {
+        if (b[0] == b[4] && b[1] == b[3])
+        {
+            System.Console.WriteLine($"Число {b} является палиндромом");
+            return true;
+        }
+        else
+        {
+            System.Console.WriteLine($"Число {b} НЕ является палиндромом");
+            return false;
+        }
+
+    }
+
+    CheckNum();
 }
-return reverse;
-}
-int reverse2 = Revnum();
-Print($"Reverse2 :{reverse2}");
-Print($"Number2 :{number}");
-    
-         if (number == reverse2)
-         {
-            Print($"Число {number} является палиндромом");
-         }
-         
-         {
-            Print($"Число {number} не является палиндромом");
-         }
-        
-   
-Print($"{number}");
-Print($"{reverse2}");
 
