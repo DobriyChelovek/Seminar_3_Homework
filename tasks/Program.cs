@@ -4,6 +4,7 @@
 14212 -> нет
 12821 -> да
 23432 -> да
+*/
 
 void Print(string message)
 {
@@ -18,35 +19,36 @@ int GetNUmber(string message)
     return b;
 }
 int number = GetNUmber( "Введите положительное пятизначное число");
+Print($"Number :{number}");
 
-bool Check(int number)
+
+int number1;
+int reverse = 0;
+
+int Revnum()
 {
-    if (number>99999)
-    {
-        Console.WriteLine("Это не пятизначное число");
-        return false;
-    }
-    return true;
+    while (number >0)
+{
+    number1 = number%10;
+    reverse = (reverse*10 +number1);
+    number = number /10;
 }
-bool Negative(int number)
-{
-    if (number<0)
-    {
-        Console.WriteLine("Введите положительное число");
-        return false;
-    }
-    return true;
+return reverse;
 }
-if (Check(number))
-{
-    if (Negative(number))
-    {
-         Print("работает");
-    }
+int reverse2 = Revnum();
+Print($"Reverse2 :{reverse2}");
+Print($"Number2 :{number}");
+    
+         if (number == reverse2)
+         {
+            Print($"Число {number} является палиндромом");
+         }
+         
+         {
+            Print($"Число {number} не является палиндромом");
+         }
+        
    
-}
-*/
-
-
-
+Print($"{number}");
+Print($"{reverse2}");
 
